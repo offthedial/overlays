@@ -1,0 +1,32 @@
+{
+  "name": "overlays",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "LeptoFlare",
+    "email": "47790183+LeptoFlare@users.noreply.github.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1980,
+        "height": 1080
+      }
+    ]
+  },
+  "license": "MIT"
+}
