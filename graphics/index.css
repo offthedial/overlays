@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+
+:root {
+  --color-white: #ffffff;
+  --color-slate: #5d9194;
+  --color-cyan: #1abfc7;
+  --color-green: #39fa96;
+  --color-pink: #fb788b;
+  --color-purple: #c71a8a;
+  --font-size: 36px;
+  --font-size-vs: 72px;
+  --font-size-small: 30px;
+  --font-size-mute: 24px;
+  --width-size: 432px;
+  --width-size-large: 504px;
+  --width-size-medium: 324px;
+  --width-size-small: 252px;
+  --width-size-smaller: 144px;
+  --space-1: 6px;
+  --space--1: -6px;
+  --space-2: 12px;
+  --space--2: -12px;
+  --space-5: 30px;
+  --space--5: -30px;
+  --space-8: 48px;
+}
+
+body {
+  font-family: "DM Sans", system-ui;
+  font-weight: 500;
+  margin: 0px;
+}
+.scene {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-slate);
+}
+.scene__container {
+  flex: 1;
+  display: flex;
+  place-self: stretch;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+}
+.scene__container--scores {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.scene__container--column {
+  padding: 0;
+  display: flex;
+  place-self: stretch;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.scene__container--column--brb {
+  justify-content: space-around;
+}
+.scene--brb__texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space--5);
+}
+.roster {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.roster--right {
+  flex-direction: row-reverse;
+}
+
+.scores {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("https://cdn.discordapp.com/attachments/806706288955883530/846807299204055080/unknown.png");
+  background-size: cover;
+}
+.maps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.textbox {
+  font-size: var(--font-size);
+  border-radius: var(--space-1);
+}
+.textbox--scores {
+  font-size: var(--font-size-small);
+}
+.textbox--scores--flavor {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-mute);
+}
+.textbox__main--scores {
+  background-color: transparent;
+  color: var(--color-white);
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+.textbox--scores__column {
+  display: flex;
+  flex-direction: column;
+}
+.textbox--shadow {
+  background-color: var(--color-cyan);
+  padding: 0 0 var(--space-1) 0;
+  display: flex;
+  margin-bottom: var(--space-5);
+}
+.textbox--scores__shadow {
+  padding: 0;
+  display: flex;
+  margin-bottom: 0;
+}
+.textbox--scores__text {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
+.textbox--scores__text--spacer {
+  margin-top: var(--space-1);
+}
+.textbox--scores__text__pronouns {
+  color: var(--color-white);
+  font-size: var(--font-size-mute);
+  background-color: var(--color-cyan);
+  padding: var(--space-1);
+  border-radius: var(--space-1);
+  margin-left: var(--space-2);
+}
+.textbox__main {
+  background-color: var(--color-white);
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+.textbox__main--icon {
+  background-color: var(--color-cyan);
+  color: var(--color-white);
+}
+.vs {
+  padding: var(--space-8);
+  font-size: var(--font-size-vs);
+}
+.textbox__main--icon--score {
+  margin-left: var(--space-2);
+  margin-right: var(--space-2);
+}
+.textbox__main--commentators {
+  display: flex;
+  align-items: center;
+  margin-left: var(--space--1);
+  margin-right: var(--space--1);
+}
+.textbox__main--commentators__text {
+  margin-left: var(--space-1);
+  margin-right: var(--space-1);
+}
+.textbox__main--commentators__text--pronouns {
+  color: var(--color-white);
+  font-size: var(--font-size-small);
+  background-color: var(--color-cyan);
+  padding: var(--space-1);
+  border-radius: var(--space-1);
+}
+.score {
+  display: flex;
+  align-items: baseline;
+  min-height: var(--width-size-smaller);
+}
+.score--cards {
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.textbox--shadow--score {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.textbox--score--left {
+  border-bottom-left-radius: var(--space-1);
+  border-top-left-radius: var(--space-1);
+  text-align: right;
+}
+.textbox--score--right {
+  border-bottom-right-radius: var(--space-1);
+  border-top-right-radius: var(--space-1);
+}
+.textbox__main--icon--middle {
+  color: var(--color-cyan);
+}
+.textbox__main--icon--svg {
+  display: flex;
+  align-items: center;
+}
+.textbox__main--text {
+  min-width: var(--width-size);
+}
+.textbox__main--names {
+  width: 100%;
+}
+.textbox__score {
+  min-width: var(--width-size-medium);
+  margin-bottom: var(--space-5);
+}
+.textbox--shadow--card {
+  padding: 0 var(--space-2) var(--space-2) 0;
+  margin-bottom: 0;
+}
+.textbox--shadow--map {
+  padding: 0 var(--space-2) 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  width: var(--width-size-medium);
+  margin-left: var(--space-5);
+  margin-right: var(--space-5);
+}
+.textbox__main--card {
+  min-width: var(--width-size);
+  height: var(--width-size);
+}
+.textbox__main--map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: var(--width-size-large);
+  background-position: center center;
+  background-size: cover;
+}
+.textbox__main--map--played {
+  filter: brightness(0.5) grayscale(0.75);
+}
+.textbox__main--map__text {
+  font-size: var(--font-size-small);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom-left-radius: var(--space-1);
+  border-bottom-right-radius: var(--space-1);
+  text-align: center;
+  background-color: var(--color-white);
+  padding: var(--space-1);
+  height: 2.5em;
+}
+.textbox__main--map__text--mode {
+  color: var(--color-white);
+  background-color: var(--color-cyan);
+  height: initial;
+}
+.textbox__main--card--left {
+  text-align: right;
+  list-style-position: outside;
+}

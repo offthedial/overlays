@@ -1,37 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-	<style>
-		body {
-			font-family: sans-serif;
-		}
-
-		.monospace {
-			font-family: monospace;
-		}
-	</style>
-</head>
-<body>
-	<p>
-		Hello, I'm one of the graphics in your bundle!
-		I'm where you put the graphics you want to run in your broadcast software!
-	</p>
-
-	<p>To edit me, open "<span id="path" class="monospace"></span>" in your favorite text editor or IDE.</p>
-
-	<p>You can use any libraries, frameworks, and tools you want. There are no limits.</p>
-
-	<p>Visit <a href="https://nodecg.com" target="_blank" rel="noopener">https://nodecg.com</a> for full documentation.</p>
-
-	<p>Have fun!</p>
-
-	<script>
-		document.getElementById('path').textContent = `nodecg${window.location.pathname}`;
-
-		// You can access the NodeCG api anytime from the `window.nodecg` object
-		// Or just `nodecg` for short. Like this!:
-		nodecg.log.info('Here\'s an example of using NodeCG\'s logging API!');
-	</script>
-</body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="scenes">
+      <div id="scene" class="scene">
+        <div class="scene__container">
+          <div
+            id="scene-brb"
+            class="
+              scene__container--column--brb
+              scene__container--column
+              scene__container
+            "
+          >
+            <div id="scene-brb-image">
+              <img
+                style="max-width: var(--width-size-large)"
+                src="https://assets.otd.ink/idtga/logo-nobg.svg"
+              />
+            </div>
+            <div class="scene--brb__texts">
+              <div id="scene-brb-flavor" class="textbox textbox--shadow">
+                <div id="brb-flavor" class="textbox textbox__main"></div>
+              </div>
+              <div class="textbox textbox--shadow">
+                <div
+                  class="
+                    textbox
+                    textbox__main--icon
+                    textbox__main
+                    textbox__main--icon--svg
+                  "
+                >
+                  <svg
+                    width="1em"
+                    height="1em"
+                    style="vertical-align: middle"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="microphone"
+                    class="svg-inline--fa fa-microphone fa-w-11"
+                    viewBox="0 0 352 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M176 352c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96S80 42.98 80 96v160c0 53.02 42.98 96 96 96zm160-160h-16c-8.84 0-16 7.16-16 16v48c0 74.8-64.49 134.82-140.79 127.38C96.71 376.89 48 317.11 48 250.3V208c0-8.84-7.16-16-16-16H16c-8.84 0-16 7.16-16 16v40.16c0 89.64 63.97 169.55 152 181.69V464H96c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-56v-33.77C285.71 418.47 352 344.9 352 256v-48c0-8.84-7.16-16-16-16z"
+                    />
+                  </svg>
+                </div>
+                <div id="scene-brb-commentators" class="textbox textbox__main">
+                  <div id="brbComms" class="textbox__main--commentators"></div>
+                </div>
+              </div>
+              <div id="scene-brb-social" class="textbox textbox--shadow">
+                <div
+                  class="
+                    textbox
+                    textbox__main--icon
+                    textbox__main
+                    textbox__main--icon--svg
+                  "
+                >
+                  <svg
+                    width="1em"
+                    height="1em"
+                    style="vertical-align: middle"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 71 55"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0)">
+                      <path
+                        d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"
+                        fill="#ffffff"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0">
+                        <rect width="71" height="55" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="textbox textbox__main">otd.ink/discord</div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="scene-info"
+            class="scene__container--column scene__container"
+          >
+            <div id="scene-info-scoreboard" class="score">
+              <div
+                class="
+                  textbox
+                  textbox--score--left
+                  textbox--shadow--score
+                  textbox--shadow
+                "
+              >
+                <div
+                  id="board-a-name"
+                  class="textbox textbox__main textbox__main--text"
+                ></div>
+                <div
+                  id="board-a-score"
+                  class="
+                    textbox
+                    textbox__main--icon
+                    textbox__main
+                    textbox__main--icon--score
+                  "
+                ></div>
+              </div>
+              <div
+                class="
+                  textbox
+                  textbox--score--middle
+                  textbox--shadow--score
+                  textbox--shadow
+                "
+              >
+                <div
+                  class="
+                    textbox__main--icon--middle
+                    textbox__main--icon
+                    textbox__main
+                  "
+                >
+                  -
+                </div>
+              </div>
+              <div
+                class="
+                  textbox
+                  textbox--score--right
+                  textbox--shadow--score
+                  textbox--shadow
+                "
+              >
+                <div
+                  id="board-b-score"
+                  class="
+                    textbox
+                    textbox__main--icon
+                    textbox__main
+                    textbox__main--icon--score
+                  "
+                ></div>
+                <div
+                  id="board-b-name"
+                  class="textbox textbox__main textbox__main--text"
+                ></div>
+              </div>
+            </div>
+            <div id="scene-info-rosters" class="score--cards score">
+              <div class="textbox textbox--shadow--card textbox--shadow">
+                <div
+                  id="rosters-a"
+                  class="textbox textbox__main--card textbox__main"
+                ></div>
+              </div>
+              <div
+                class="
+                  textbox__main--icon--card
+                  textbox
+                  textbox__main--icon
+                  textbox--shadow
+                  vs
+                "
+              >
+                VS
+              </div>
+              <div class="textbox textbox--shadow--card textbox--shadow">
+                <div
+                  id="rosters-b"
+                  class="textbox textbox__main--card textbox__main"
+                ></div>
+              </div>
+            </div>
+            <div id="scene-info-maps" class="maps"></div>
+            <div>
+              <img
+                style="width: var(--width-size-smaller)"
+                src="https://assets.otd.ink/idtga/logo-nobg.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="scores" class="scores">
+        <div class="scene__container--scores scene__container">
+          <div
+            class="
+              textbox__score textbox--scores textbox
+              textbox--scores__shadow
+              textbox--shadow
+              textbox--scores__column
+            "
+          >
+            <div class="textbox--scores textbox textbox--scores__shadow">
+              <div
+                class="
+                  textbox--scores__column
+                  textbox--scores textbox textbox__main textbox__main--names
+                "
+              >
+                <div id="score-a-name" class="textbox--scores__text"></div>
+                <div class="textbox--scores__text--spacer"></div>
+                <div id="score-b-name" class="textbox--scores__text"></div>
+              </div>
+              <div
+                class="
+                  textbox--scores__column
+                  textbox--scores textbox textbox__main--scores
+                "
+              >
+                <div id="score-a-score" class="textbox--scores__text"></div>
+                <div class="textbox--scores__text--spacer"></div>
+                <div id="score-b-score" class="textbox--scores__text"></div>
+              </div>
+            </div>
+            <div
+              id="scores-flavor"
+              class="
+                textbox--scores--flavor
+                textbox--scores
+                textbox
+                textbox__main--scores
+                textbox--scores__text
+              "
+            ></div>
+          </div>
+          <div class="textbox textbox--shadow">
+            <div
+              class="
+                textbox
+                textbox__main--icon
+                textbox__main
+                textbox__main--icon--svg
+              "
+            >
+              <svg
+                width="1em"
+                height="1em"
+                style="vertical-align: middle"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="microphone"
+                class="svg-inline--fa fa-microphone fa-w-11"
+                viewBox="0 0 352 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M176 352c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96S80 42.98 80 96v160c0 53.02 42.98 96 96 96zm160-160h-16c-8.84 0-16 7.16-16 16v48c0 74.8-64.49 134.82-140.79 127.38C96.71 376.89 48 317.11 48 250.3V208c0-8.84-7.16-16-16-16H16c-8.84 0-16 7.16-16 16v40.16c0 89.64 63.97 169.55 152 181.69V464H96c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-56v-33.77C285.71 418.47 352 344.9 352 256v-48c0-8.84-7.16-16-16-16z"
+                />
+              </svg>
+            </div>
+            <div
+              id="boardComms"
+              class="
+                textbox--scores__column
+                textbox--scores textbox textbox__main textbox__main--names
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

@@ -1,23 +1,7 @@
 {
   "name": "overlays",
   "version": "0.0.0",
-  "description": "",
-  "homepage": "",
-  "author": {
-    "name": "LeptoFlare",
-    "email": "47790183+LeptoFlare@users.noreply.github.com",
-    "url": ""
-  },
-  "files": [
-    "dashboard",
-    "graphics",
-    "extension.js",
-    "extension"
-  ],
-  "keywords": [
-    "",
-    "nodecg-bundle"
-  ],
+  "author": "LeptoFlare",
   "nodecg": {
     "compatibleRange": "^1.1.1",
     "graphics": [
@@ -28,5 +12,14 @@
       }
     ]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "dependencies": {
+    "animejs": "^3.2.1"
+  }
 }
