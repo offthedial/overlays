@@ -235,8 +235,12 @@ body {
   margin-right: var(--space-5);
 }
 .textbox__main--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-width: var(--width-size);
   height: var(--width-size);
+  padding: var(--space-5);
 }
 .textbox__main--map {
   display: flex;
