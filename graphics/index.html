@@ -160,13 +160,17 @@
               </div>
             </div>
             <div id="scene-info-rosters" class="score--cards score">
-              <div class="textbox textbox--shadow--card textbox--shadow">
+              <div
+                id="scene-info-roster-a"
+                class="textbox textbox--shadow--card textbox--shadow"
+              >
                 <div
                   id="rosters-a"
                   class="textbox textbox__main--card textbox__main"
                 ></div>
               </div>
               <div
+                id="scene-info-roster-vs"
                 class="
                   textbox__main--icon--card
                   textbox
@@ -177,7 +181,10 @@
               >
                 VS
               </div>
-              <div class="textbox textbox--shadow--card textbox--shadow">
+              <div
+                id="scene-info-roster-b"
+                class="textbox textbox--shadow--card textbox--shadow"
+              >
                 <div
                   id="rosters-b"
                   class="textbox textbox__main--card textbox__main"
@@ -197,6 +204,7 @@
       <div id="scores" class="scores">
         <div class="scene__container--scores scene__container">
           <div
+            id="board-scores"
             class="
               textbox__score textbox--scores textbox
               textbox--scores__shadow
@@ -237,7 +245,7 @@
               "
             ></div>
           </div>
-          <div class="textbox textbox--shadow">
+          <div id="board-comms" class="textbox textbox--shadow">
             <div
               class="
                 textbox
@@ -275,6 +283,7 @@
         </div>
       </div>
     </div>
+    <script src="anime.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

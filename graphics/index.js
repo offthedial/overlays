@@ -1,5 +1,3 @@
-// const anime = require("animejs");
-
 // Replicants
 const currentCommentators = nodecg.Replicant(
   "currentCommentators",
@@ -19,6 +17,12 @@ const currentScene = nodecg.Replicant("currentScene", "cq-overlay-controls");
 const currentTeams = nodecg.Replicant("currentTeams", "cq-overlay-controls");
 
 // Scene Switcher
+let tl = anime.timeline({
+  duration: 300,
+  easing: "easeInOutExpo",
+  delay: anime.stagger(50),
+});
+
 const scores = document.getElementById("scores");
 const switchScores = (action) => {
   if (action === "hide") {
@@ -44,27 +48,68 @@ const switchSceneBrb = (action) => {
   }
 };
 const sceneInfo = document.getElementById("scene-info");
+const sceneInfoTargets = [];
 const switchSceneInfo = (action) => {
   if (action === "hide") {
+    // anime({
+    //   targets:
+    // })
     sceneInfo.style.display = "none";
   } else if (action === "show") {
     sceneInfo.style.display = "flex";
   }
 };
 const sceneInfoRosters = document.getElementById("scene-info-rosters");
+const sceneInfoRostersTargets = [
+  document.getElementById("scene-info-roster-a"),
+  document.getElementById("scene-info-roster-vs"),
+  document.getElementById("scene-info-roster-b"),
+];
 const switchSceneInfoRosters = (action) => {
   if (action === "hide") {
-    sceneInfoRosters.style.display = "none";
+    console.log("roster hide");
+    tl = tl.add({
+      targets: sceneInfoRostersTargets,
+      scale: 0.9,
+      opacity: 0,
+      complete: (anim) => {
+        sceneInfoRosters.style.display = "none";
+      },
+    });
   } else if (action === "show") {
-    sceneInfoRosters.style.display = "flex";
+    console.log("roster show");
+    tl = tl.add({
+      targets: sceneInfoRostersTargets,
+      scale: 1,
+      opacity: 1,
+      begin: (anim) => {
+        sceneInfoRosters.style.display = "flex";
+      },
+    });
   }
 };
 const sceneInfoMaps = document.getElementById("scene-info-maps");
 const switchSceneInfoMaps = (action) => {
   if (action === "hide") {
-    sceneInfoMaps.style.display = "none";
+    console.log("maps hide");
+    tl = tl.add({
+      targets: ".textbox--shadow--map",
+      scale: 0.9,
+      opacity: 0,
+      complete: (anim) => {
+        sceneInfoMaps.style.display = "none";
+      },
+    });
   } else if (action === "show") {
-    sceneInfoMaps.style.display = "flex";
+    console.log("maps show");
+    tl = tl.add({
+      targets: ".textbox--shadow--map",
+      scale: 1,
+      opacity: 1,
+      begin: (anim) => {
+        sceneInfoMaps.style.display = "flex";
+      },
+    });
   }
 };
 
