@@ -37,6 +37,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: var(--color-slate);
+  background-image: url("https://cdn.discordapp.com/attachments/812952516538400769/847175650758361116/idtga_stream_brushstrokes_v2.png");
 }
 .scene__container {
   flex: 1;
@@ -230,6 +231,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: stretch;
+  height: var(--width-size-large);
   width: var(--width-size-medium);
   margin-left: var(--space-5);
   margin-right: var(--space-5);
@@ -250,7 +252,7 @@ body {
   padding: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: var(--width-size-large);
+  height: 100%;
   background-position: center center;
   background-size: cover;
 }
