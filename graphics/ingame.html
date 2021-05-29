@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="scenes">
+      <div id="scores" class="scores">
+        <div class="scene__container--scores scene__container">
+          <div
+            id="board-scores"
+            class="
+              textbox__score textbox--scores textbox
+              textbox--scores__shadow
+              textbox--shadow
+              textbox--scores__column
+            "
+          >
+            <div class="textbox--scores textbox textbox--scores__shadow">
+              <div
+                class="
+                  textbox--scores__column
+                  textbox--scores textbox textbox__main textbox__main--names
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: stretch;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    id="score-a-color"
+                    class="textbox--scores__text--color"
+                  ></div>
+                  <div id="score-a-name" class="textbox--scores__text"></div>
+                </div>
+                <div class="textbox--scores__text--spacer"></div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: stretch;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    id="score-b-color"
+                    class="textbox--scores__text--color"
+                  ></div>
+                  <div id="score-b-name" class="textbox--scores__text"></div>
+                </div>
+              </div>
+              <div
+                class="
+                  textbox--scores__column
+                  textbox--scores textbox textbox__main--scores
+                "
+              >
+                <div
+                  id="score-a-score"
+                  class="textbox--scores__text textbox--scores__text--score"
+                ></div>
+                <div class="textbox--scores__text--spacer"></div>
+                <div
+                  id="score-b-score"
+                  class="textbox--scores__text textbox--scores__text--score"
+                ></div>
+              </div>
+            </div>
+            <div
+              id="scores-flavor"
+              class="
+                textbox--scores--flavor
+                textbox--scores
+                textbox
+                textbox__main--scores
+                textbox--scores__text
+              "
+            ></div>
+          </div>
+          <div>
+            <div
+              style="display: none"
+              id="board-comms"
+              class="textbox textbox--shadow"
+            >
+              <div
+                class="
+                  textbox
+                  textbox__main--icon
+                  textbox__main
+                  textbox__main--icon--svg
+                "
+              >
+                <svg
+                  width="1em"
+                  height="1em"
+                  style="vertical-align: middle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="microphone"
+                  class="svg-inline--fa fa-microphone fa-w-11"
+                  viewBox="0 0 352 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M176 352c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96S80 42.98 80 96v160c0 53.02 42.98 96 96 96zm160-160h-16c-8.84 0-16 7.16-16 16v48c0 74.8-64.49 134.82-140.79 127.38C96.71 376.89 48 317.11 48 250.3V208c0-8.84-7.16-16-16-16H16c-8.84 0-16 7.16-16 16v40.16c0 89.64 63.97 169.55 152 181.69V464H96c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-56v-33.77C285.71 418.47 352 344.9 352 256v-48c0-8.84-7.16-16-16-16z"
+                  />
+                </svg>
+              </div>
+              <div
+                id="boardComms"
+                class="
+                  textbox--scores__column
+                  textbox--scores textbox textbox__main textbox__main--names
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="anime.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="ingame.js"></script>
+  </body>
+</html>

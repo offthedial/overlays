@@ -9,6 +9,11 @@
         "file": "index.html",
         "width": 1980,
         "height": 1080
+      },
+      {
+        "file": "ingame.html",
+        "width": 1980,
+        "height": 1080
       }
     ]
   },

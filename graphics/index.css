@@ -27,6 +27,7 @@
 
 body {
   font-family: "DM Sans", system-ui;
+  font-variant-numeric: tabular-nums;
   font-weight: 500;
   margin: 0px;
 }
@@ -37,7 +38,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: var(--color-slate);
-  background-image: url("https://cdn.discordapp.com/attachments/812952516538400769/847175650758361116/idtga_stream_brushstrokes_v2.png");
+  background-image: url("background.png");
 }
 .scene__container {
   flex: 1;
@@ -84,8 +85,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("https://cdn.discordapp.com/attachments/806706288955883530/846807299204055080/unknown.png");
-  background-size: cover;
 }
 .maps {
   display: flex;
@@ -134,8 +133,18 @@ body {
   align-items: center;
   justify-content: stretch;
 }
+.textbox--scores__text--score {
+  justify-content: center;
+  width: 1ch;
+  text-align: center;
+}
 .textbox--scores__text--spacer {
   margin-top: var(--space-1);
+}
+.textbox--scores__text--color {
+  border-radius: var(--space-1);
+  padding: var(--space-2);
+  margin-right: var(--space-2);
 }
 .textbox--scores__text__pronouns {
   color: var(--color-white);
@@ -206,6 +215,8 @@ body {
 }
 .textbox__main--icon--middle {
   color: var(--color-cyan);
+  margin-left: -1px;
+  margin-right: -1px;
 }
 .textbox__main--icon--svg {
   display: flex;
