@@ -87,6 +87,7 @@ body {
   min-height: 100vh;
 }
 .maps {
+  align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +244,8 @@ body {
   align-items: stretch;
   justify-content: stretch;
   height: var(--width-size-large);
-  width: var(--width-size-medium);
+  max-width: var(--width-size-medium);
+  width: 100%;
   margin-left: var(--space-5);
   margin-right: var(--space-5);
 }
@@ -280,12 +282,12 @@ body {
   text-align: center;
   background-color: var(--color-white);
   padding: var(--space-1);
-  height: 2.5em;
+  min-height: 2.5em;
 }
 .textbox__main--map__text--mode {
   color: var(--color-white);
   background-color: var(--color-cyan);
-  height: initial;
+  min-height: 1.5em;
 }
 .textbox__main--card--left {
   text-align: right;
