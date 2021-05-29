@@ -82,9 +82,7 @@ const measureText = (text, element, html = false) => {
   measurer.style.top = "1100px";
   measurer.style.opacity = "0";
   measurer.style.zIndex = "-99999";
-  if (!html) {
-    measurer.style.padding = 0;
-  }
+  measurer.style.padding = 0;
   measurer.classList = element.classList;
   if (html) {
     measurer.innerHTML = text;
