@@ -6,12 +6,12 @@
     "compatibleRange": "^1.1.1",
     "graphics": [
       {
-        "file": "index.html",
+        "file": "break.html",
         "width": 1980,
         "height": 1080
       },
       {
-        "file": "ingame.html",
+        "file": "game.html",
         "width": 1980,
         "height": 1080
       }
