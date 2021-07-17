@@ -161,13 +161,18 @@ currentTeams.on("change", (newValue, oldValue) => {
 // Maps Updates
 const maplist = document.getElementById("scene-info-maps");
 currentRound.on("change", (newValue) => {
-  subtleFade(
-    [maplist],
-    newValue.value
-      .map((mapInfo) => MapCard(mapInfo.map, mapInfo.mode))
-      .join(""),
-    true
-  );
+  if (currentBreakScreen.value === "maplist") {
+    subtleFade([maplist], Maps(newValue.value), true);
+  } else {
+    anime({
+      duration: 300,
+      easing: "easeInOutExpo",
+      delay: anime.stagger(50),
+      targets: ".textbox--shadow--map",
+      scale: 0.9,
+      opacity: 0,
+    });
+  }
 });
 
 // Commentators Updates

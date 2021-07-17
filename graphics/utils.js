@@ -100,19 +100,29 @@ const Roster = (name, right = false) => `
   </div>
 `;
 
-const MapCard = (map, mode, winner) => `
-  <div class="textbox textbox--shadow--map textbox--shadow--card textbox--shadow">
-    <div style="background-image: url('./stages/${map}.png');" class="textbox textbox__main--map textbox__main ${
-  winner && "textbox__main--map--played"
-}">
+const Maps = (maps) => `
+<div class="maps">
+  ${maps
+    .map(
+      (
+        game
+      ) => `<div class="textbox textbox--shadow--map textbox--shadow--card textbox--shadow">
+    <div style="background-image: url('./stages/${
+      game.map
+    }.png');" class="textbox textbox__main--map textbox__main ${
+        game.winner && "textbox__main--map--played"
+      }">
     </div>
     <div class="textbox__main--map__text">
-      ${map}
+      ${game.map}
     </div>
     <div class="textbox__main--map__text--mode textbox__main--map__text">
-      ${mode}
+      ${game.mode}
     </div>
-  </div>
+  </div>`
+    )
+    .join("")}
+</div>
 `;
 
 const BoardComms = (value) => `
