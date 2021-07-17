@@ -26,13 +26,13 @@
 }
 
 body {
+  font-size: var(--font-size);
   font-family: "DM Sans", system-ui;
   font-variant-numeric: tabular-nums;
   font-weight: 500;
   margin: 0px;
 }
 .scene {
-  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -93,7 +93,6 @@ body {
   justify-content: center;
 }
 .textbox {
-  font-size: var(--font-size);
   border-radius: var(--space-1);
 }
 .textbox--scores {
