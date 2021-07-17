@@ -4,24 +4,22 @@ You will need to have an appropriate version of NodeCG installed to use it.
 
 # Usage
 ## Tournament Begins
-- Set flavor text to "welcome"
-- Set commentators
-- Set screen to BRB
+- Set flavor text to `welcome`
+- Set commentator block
+- Set break screen to `brb`
 ## Round Begins
-- Set flavor text to "round a"
-- Load Maps
-- Set Teams
-- Reset Score
-- Go to rosters screen
-- Go to maps screen
+- Set round
+- Set team
+- Set break screen to `rosters`, then `maps`
 ## Game Begins
-- Change OBS scene to in-game
+- Switch OBS scene to `game`
 - Set colors
-- Set graphics scene to "scores"
+- Show scores
 ## Game Ends
-- Set graphics scene to "maps"
+- Hide scores
 - Update score
-- Change OBS scene to main
+- Switch OBS scene to `break`
 ## Round Ends
-- Set flavor text to "brb"
-- Change OBS scene to brb
+- Set flavor text to `round x coming up`
+- Set break screen to `brb`
+- Reset score
