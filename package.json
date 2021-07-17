@@ -23,8 +23,5 @@
     "graphics",
     "extension.js",
     "extension"
-  ],
-  "dependencies": {
-    "animejs": "^3.2.1"
-  }
+  ]
 }
