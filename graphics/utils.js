@@ -104,22 +104,19 @@ const Maps = (maps) => `
 <div class="maps">
   ${maps
     .map(
-      (
-        game
-      ) => `<div class="textbox textbox--shadow--map textbox--shadow--card textbox--shadow">
-    <div style="background-image: url('./stages/${
-      game.map
-    }.png');" class="textbox textbox__main--map textbox__main ${
-        game.winner && "textbox__main--map--played"
-      }">
-    </div>
-    <div class="textbox__main--map__text">
-      ${game.map}
-    </div>
-    <div class="textbox__main--map__text--mode textbox__main--map__text">
-      ${game.mode}
-    </div>
-  </div>`
+      (game, i) => `
+      <div class="textbox textbox--shadow--map textbox--shadow--card textbox--shadow">
+        <div id="game-image-${i}" class="textbox textbox__main--map textbox__main" style="background-image: url('./stages/${game.map}.png');">
+        </div>
+        <div id="game-winner-${i}" class="textbox__main--map--played__text">
+        </div>
+        <div class="textbox__main--map__text">
+          ${game.map}
+        </div>
+        <div class="textbox__main--map__text--mode textbox__main--map__text">
+          ${game.mode}
+        </div>
+      </div>`
     )
     .join("")}
 </div>

@@ -163,7 +163,16 @@ const maplist = document.getElementById("scene-info-maps");
 currentRound.on("change", (newValue) => {
   if (currentBreakScreen.value === "maplist") {
     subtleFade([maplist], Maps(newValue.value), true);
+    anime({
+      duration: 601,
+      complete: () => {
+        if (currentMapWinners.value) {
+          setMapWinners(currentMapWinners.value, []);
+        }
+      },
+    });
   } else {
+    maplist.innerHTML = Maps(newValue.value);
     anime({
       duration: 300,
       easing: "easeInOutExpo",
@@ -172,8 +181,63 @@ currentRound.on("change", (newValue) => {
       scale: 0.9,
       opacity: 0,
     });
+    NodeCG.waitForReplicants(currentTeams, currentMapWinners).then(() => {
+      setMapWinners(currentMapWinners.value, []);
+    });
   }
 });
+
+currentMapWinners.on("change", (newValue, oldValue) => {
+  if (oldValue) {
+    NodeCG.waitForReplicants(currentTeams, currentRound).then(() => {
+      setMapWinners(newValue, oldValue);
+    });
+  }
+});
+
+const setMapWinners = (newValue, oldValue) => {
+  const teamNames = {
+    A: currentTeams.value?.[0]?.name,
+    B: currentTeams.value?.[1]?.name,
+  };
+  currentRound.value.value.forEach((_, i) => {
+    const gameImage = document.getElementById(`game-image-${i}`);
+    const gameWinner = document.getElementById(`game-winner-${i}`);
+    if (oldValue?.[i] !== newValue[i]) {
+      // Animate text
+      anime({
+        duration: oldValue?.[i] ? 300 : 0,
+        easing: "easeInOutExpo",
+        targets: gameWinner,
+        opacity: 0,
+        complete: () => {
+          if (newValue[i]) {
+            gameWinner.innerText = teamNames[newValue[i]];
+            anime({
+              duration: 300,
+              easing: "easeInOutExpo",
+              targets: gameWinner,
+              opacity: 1,
+            });
+          }
+        },
+      });
+      // Animate filter change
+      if (oldValue?.[i] === undefined || newValue[i] === undefined) {
+        anime({
+          duration: 300,
+          easing: "easeInOutSine",
+          targets: gameImage,
+          filter: [
+            "brightness(1) grayscale(0)",
+            "brightness(0.5) grayscale(0.75)",
+          ],
+          direction: newValue[i] ? "normal" : "reverse",
+        });
+      }
+    }
+  });
+};
 
 // Commentators Updates
 const brbComms = document.getElementById("brbComms");

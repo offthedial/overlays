@@ -267,9 +267,15 @@ body {
   height: 100%;
   background-position: center center;
   background-size: cover;
+  position: relative;
 }
-.textbox__main--map--played {
-  filter: brightness(0.5) grayscale(0.75);
+.textbox__main--map--played__text {
+  color: var(--color-white);
+  text-align: center;
+  position: absolute;
+  padding-top: var(--space-2);
+  padding-left: var(--space-2);
+  max-width: 1px;
 }
 .textbox__main--map__text {
   font-size: var(--font-size-small);
