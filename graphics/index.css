@@ -23,6 +23,7 @@
   --space-5: 30px;
   --space--5: -30px;
   --space-8: 48px;
+  --game-padding: 26px;
 }
 
 body {
@@ -52,8 +53,9 @@ body {
 .scene__container--scores {
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 26px;
+  padding: var(--game-padding);
 }
+
 .scene__container--column {
   padding: 0;
   display: flex;
@@ -232,7 +234,7 @@ body {
 }
 .textbox__score {
   min-width: var(--width-size-medium);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--game-padding);
 }
 .textbox--shadow--card {
   padding: 0 var(--space-2) var(--space-2) 0;
