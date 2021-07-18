@@ -52,6 +52,7 @@ body {
 .scene__container--scores {
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 26px;
 }
 .scene__container--column {
   padding: 0;
@@ -85,6 +86,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-size: cover;
 }
 .maps {
   align-self: stretch;
