@@ -197,16 +197,16 @@ currentMapWinners.on("change", (newValue, oldValue) => {
 
 const setMapWinners = (newValue, oldValue) => {
   const teamNames = {
-    A: currentTeams.value?.[0]?.name,
-    B: currentTeams.value?.[1]?.name,
+    A: currentTeams.value ? currentTeams.value[0].name : undefined,
+    B: currentTeams.value ? currentTeams.value[1].name : undefined,
   };
   currentRound.value.value.forEach((_, i) => {
     const gameImage = document.getElementById(`game-image-${i}`);
     const gameWinner = document.getElementById(`game-winner-${i}`);
-    if (oldValue?.[i] !== newValue[i]) {
+    if (oldValue ? oldValue[i] : undefined !== newValue[i]) {
       // Animate text
       anime({
-        duration: oldValue?.[i] ? 300 : 0,
+        duration: (oldValue ? oldValue[i] : undefined) ? 300 : 0,
         easing: "easeInOutExpo",
         targets: gameWinner,
         opacity: 0,
@@ -223,7 +223,11 @@ const setMapWinners = (newValue, oldValue) => {
         },
       });
       // Animate filter change
-      if (oldValue?.[i] === undefined || newValue[i] === undefined) {
+      if (
+        oldValue
+          ? oldValue[i]
+          : undefined === undefined || newValue[i] === undefined
+      ) {
         anime({
           duration: 300,
           easing: "easeInOutSine",

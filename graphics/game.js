@@ -47,7 +47,7 @@ currentGameScreen.on("change", (newValue) => {
       document.getElementById("board-scores"),
       document.getElementById("board-score-comms"),
     ],
-    newValue?.showScores
+    newValue ? newValue.showScores : undefined
   );
 });
 
