@@ -188,6 +188,7 @@ currentRound.on("change", (newValue) => {
 });
 
 currentMapWinners.on("change", (newValue, oldValue) => {
+  console.log(newValue, oldValue);
   if (oldValue) {
     NodeCG.waitForReplicants(currentTeams, currentRound).then(() => {
       setMapWinners(newValue, oldValue);
@@ -200,19 +201,22 @@ const setMapWinners = (newValue, oldValue) => {
     A: currentTeams.value ? currentTeams.value[0].name : undefined,
     B: currentTeams.value ? currentTeams.value[1].name : undefined,
   };
+  console.log(teamNames);
   currentRound.value.value.forEach((_, i) => {
     const gameImage = document.getElementById(`game-image-${i}`);
     const gameWinner = document.getElementById(`game-winner-${i}`);
-    if (oldValue ? oldValue[i] : undefined !== newValue[i]) {
-      // Animate text
+    // Animate text
+    const oldI = oldValue.length >= i - 1 ? oldValue[i] : undefined;
+    const newI = newValue.length >= i - 1 ? newValue[i] : undefined;
+    if (oldI !== newI) {
       anime({
-        duration: (oldValue ? oldValue[i] : undefined) ? 300 : 0,
+        duration: 300,
         easing: "easeInOutExpo",
         targets: gameWinner,
         opacity: 0,
         complete: () => {
           if (newValue[i]) {
-            gameWinner.innerText = teamNames[newValue[i]];
+            gameWinner.innerText = newValue[i];
             anime({
               duration: 300,
               easing: "easeInOutExpo",
@@ -223,11 +227,7 @@ const setMapWinners = (newValue, oldValue) => {
         },
       });
       // Animate filter change
-      if (
-        oldValue
-          ? oldValue[i]
-          : undefined === undefined || newValue[i] === undefined
-      ) {
+      if (!oldI || !newI) {
         anime({
           duration: 300,
           easing: "easeInOutSine",
